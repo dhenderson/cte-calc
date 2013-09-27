@@ -1,0 +1,77 @@
+<!DOCTYPE HTML> 
+<html ng-app>
+	<head>
+		<script src="js/libs/jquery.js"></script>
+		<script src="js/libs/angular.min.js"></script>
+		<script src="js/libs/bootstrap.js"></script>
+		<script src="js/controllers.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div ng-controller="CTEController" class="cte-container">
+			<header>
+				Cash Transfer Equivalency Calculator
+			</header>
+			<div class="cte-content">
+				<div id="program">
+					<label><strong>Step 1:</strong> How much will this program cost?</label> 
+					$ <input type="text" ng-model="programCost" ng-change="calculateAverageCostPerPerson(); calculateWeightedAverageCTE();"></input>
+				</div>
+				<div id="targets">
+					<label><strong>Step 2:</strong> Enter one or more recipient groups for this program</label> 
+					<table class="table">
+						<tr>
+							<th>Do it?</th>
+							<th>Group name</th>
+							<th>Number of people</th>
+							<th>Average value</th>
+							<th>CTE</th>
+							<th>Remove</th>
+						</tr>
+						<tr class="background-color-no" ng-class="{'background-color-yes': target.cte >= 1}" ng-repeat="(key, target) in targets">	
+							<td class="do-it-no" ng-class="{'do-it-yes': target.cte >= 1}">
+								<div>
+									<i class="icon-thumbs-down" ng-show="target.cte < 1 && target.n > 0 && target.averageValue > 0"></i>
+									<i class="icon-thumbs-up" ng-show="target.cte >= 1 && target.n > 0 && target.averageValue > 0"></i>
+								</div>
+							</td>
+							<td>
+								<input type="text" ng-model="target.name" ng-model-instant></input>
+							</td>
+							<td>
+								<input type="text" ng-model="target.n" ng-change="updateCTE(); countTotalNumberOfPeople(); calculateAverageCostPerPerson(); calculateWeightedAverageCTE();" ng-model-instant></input>
+							</td>
+							<td>
+								$ <input type="text" ng-model="target.averageValue" ng-change="updateCTE(); calculateWeightedAverageCTE();" ng-model-instant></input>
+							</td>
+							<td class="cte" ng-class="{overone: target.cte >= 1}">{{target.cte}}</td>
+							<td><button class="btn" ng-click="removeTarget(key)">Remove</button></td>
+						</tr>
+					</table>
+				</div>
+				<button class="btn" ng-click="newTarget()">Add new group</button>
+			</div>
+			<div id="overall-stats" class="background-color-no" ng-class="{'background-color-yes': weightedAverageCTE >= 1}">
+				<h1>Decision</h1>
+				<div id="decision">
+					<label>Worth investing in: </label>
+					<span class="decision-no" ng-show="weightedAverageCTE < 1">No</span>
+					<span class="decision-yes" ng-show="weightedAverageCTE >= 1">Yes</span>
+				</div>
+				<label>Total number of people:</label> 
+				<input type="text" ng-model="totalNumberOfPeople" readonly></input>
+				<label>Average cost per person:</label> 
+				$ <input type="text" ng-model="averageCostPerPerson" readonly></input>
+				<label>Weighted average CTE:</label> 
+				<input type="text" ng-model="weightedAverageCTE" readonly></input>
+			</div>
+			<div id="footer">
+				<ul>
+					<li><a href="http://www.fullcontactphilanthropy.com/">Full Contact Philanthropy</a><li>
+					<li>Based on the <a href="https://www.dropbox.com/s/md7c9sxzsgg68cb/Cash%20Transfer%20Equivalency.pdf">Cash Transfer Equivalency</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
