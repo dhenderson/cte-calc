@@ -7,14 +7,14 @@ label{display: inline; font-weight: normal;}
 
 header{color: #373748; font-weight: bold; font-size: 1.5em; margin-bottom: 20px;}
 
-.cte-container{margin: 0px auto; max-width: 900px; margin-top: 20px;}
+.cte-container{margin: 0px auto; max-width: 920px; margin-top: 20px; padding: 10px;}
 .cte-content{padding: 0px; border: 0px solid #CCC; border-bottom: 0px; background-color: #FFF; margin-bottom: 20px;}
 .cte-content label {display: block; margin-bottom: 10px;}
 
 #program{margin-bottom: 20px;}
 
-.background-color-no{background-color: #FFEEEE;}
-.background-color-yes{background-color: #EEFFEE;}
+.background-color-no{background-color: #FFDDDD;}
+.background-color-yes{background-color: #DDFFDD;}
 
 .cte {font-weight: bold; color: #EE0000;}
 .overone {color: #008800;}
@@ -33,6 +33,6 @@ header{color: #373748; font-weight: bold; font-size: 1.5em; margin-bottom: 20px;
 .decision-yes{color: #008800;}
 .decision-no{color: #DD0000;}
 
-#footer{text-align: center; margin: 0px auto; margin-top: 30px; font-size: 1em;}
+#footer{text-align: center; margin: 0px auto; margin-top: 30px; font-size: 0.8em;}
 #footer ul {list-style-type: none; margin: 0xp; padding: 0px;}
 #footer ul li{margin-bottom: 5px;}

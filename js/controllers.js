@@ -83,5 +83,10 @@ function CTEController($scope) {
 	
 	$scope.removeTarget = function(key) {
 		$scope.targets.splice(key, 1);
+		
+		$scope.countTotalNumberOfPeople();
+		$scope.calculateAverageCostPerPerson();
+		$scope.calculateWeightedAverageCTE();
+		
 	}
 }
