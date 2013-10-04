@@ -14,58 +14,108 @@
 				Cash Transfer Equivalency Calculator
 			</header>
 			<div class="cte-content">
-				<div id="program">
-					<label><strong>Step 1:</strong> How much will this program cost?</label> 
-					$ <input type="text" ng-model="programCost" ng-change="calculateAverageCostPerPerson(); calculateWeightedAverageCTE();"></input>
+				<div class="tabbable">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#calculator" data-toggle="tab">Calculator</a>
+						</li>
+						<li>
+							<a href="#instructions" data-toggle="tab">Instructions</a>
+						</li>
+					</ul>
 				</div>
-				<div id="targets">
-					<label><strong>Step 2:</strong> Enter one or more recipient groups for this program</label> 
-					<table class="table">
-						<tr>
-							<th>Do it?</th>
-							<th>Group name</th>
-							<th>Number of people</th>
-							<th>Average value</th>
-							<th>CTE</th>
-							<th>Remove</th>
-						</tr>
-						<tr class="background-color-no" ng-class="{'background-color-yes': target.cte >= 1}" ng-repeat="(key, target) in targets">	
-							<td class="do-it-no" ng-class="{'do-it-yes': target.cte >= 1}">
-								<div>
-									<i class="icon-thumbs-down" ng-show="target.cte < 1 && target.n > 0 && target.averageValue > 0"></i>
-									<i class="icon-thumbs-up" ng-show="target.cte >= 1 && target.n > 0 && target.averageValue > 0"></i>
-								</div>
-							</td>
-							<td>
-								<input type="text" ng-model="target.name" ng-model-instant></input>
-							</td>
-							<td>
-								<input type="text" ng-model="target.n" ng-change="updateCTE(); countTotalNumberOfPeople(); calculateAverageCostPerPerson(); calculateWeightedAverageCTE();" ng-model-instant></input>
-							</td>
-							<td>
-								$ <input type="text" ng-model="target.averageValue" ng-change="updateCTE(); calculateWeightedAverageCTE();" ng-model-instant></input>
-							</td>
-							<td class="cte" ng-class="{overone: target.cte >= 1}">{{target.cte}}</td>
-							<td><button class="btn" ng-click="removeTarget(key)">Remove</button></td>
-						</tr>
-					</table>
-				</div>
-				<button class="btn" ng-click="newTarget()">Add new group</button>
-			</div>
-			<div id="overall-stats" class="background-color-no" ng-class="{'background-color-yes': weightedAverageCTE >= 1}">
-				<h1>Decision</h1>
-				<div id="decision">
-					<label>Worth investing in: </label>
-					<span class="decision-no" ng-show="weightedAverageCTE < 1">No</span>
-					<span class="decision-yes" ng-show="weightedAverageCTE >= 1">Yes</span>
-				</div>
-				<label>Total number of people:</label> 
-				<input type="text" ng-model="totalNumberOfPeople" readonly></input>
-				<label>Average cost per person:</label> 
-				$ <input type="text" ng-model="averageCostPerPerson" readonly></input>
-				<label>Weighted average CTE:</label> 
-				<input type="text" ng-model="weightedAverageCTE" readonly></input>
-			</div>
+				<div class="tab-content">
+					<div id="calculator" class="tab-pane active">
+						<div id="program">
+							<label><strong>Step 1:</strong> How much will this program cost?</label> 
+							$ <input type="text" ng-model="programCost" ng-change="calculateAverageCostPerPerson(); calculateWeightedAverageCTE();"></input>
+						</div>
+						<div id="targets">
+							<label><strong>Step 2:</strong> Enter one or more recipient groups for this program</label> 
+							<table class="table">
+								<tr>
+									<th>Do it?</th>
+									<th>Group name</th>
+									<th>Number of people</th>
+									<th>Average value</th>
+									<th>CTE</th>
+									<th>Remove</th>
+								</tr>
+								<tr class="background-color-no" ng-class="{'background-color-yes': target.cte >= 1}" ng-repeat="(key, target) in targets">	
+									<td class="do-it-no" ng-class="{'do-it-yes': target.cte >= 1}">
+										<div>
+											<i class="icon-thumbs-down" ng-show="target.cte < 1 && target.n > 0 && target.averageValue > 0"></i>
+											<i class="icon-thumbs-up" ng-show="target.cte >= 1 && target.n > 0 && target.averageValue > 0"></i>
+										</div>
+									</td>
+									<td>
+										<input type="text" ng-model="target.name" ng-model-instant></input>
+									</td>
+									<td>
+										<input type="text" ng-model="target.n" ng-change="updateCTE(); countTotalNumberOfPeople(); calculateAverageCostPerPerson(); calculateWeightedAverageCTE();" ng-model-instant></input>
+									</td>
+									<td>
+										$ <input type="text" ng-model="target.averageValue" ng-change="updateCTE(); calculateWeightedAverageCTE();" ng-model-instant></input>
+									</td>
+									<td class="cte" ng-class="{overone: target.cte >= 1}">{{target.cte}}</td>
+									<td><button class="btn" ng-click="removeTarget(key)">Remove</button></td>
+								</tr>
+							</table>
+						</div>
+						<button class="btn" ng-click="newTarget()">Add new group</button>
+						<div id="overall-stats" class="background-color-no" ng-class="{'background-color-yes': weightedAverageCTE >= 1}">
+							<h1>Decision</h1>
+							<div id="decision">
+								<label>Worth investing in: </label>
+								<span class="decision-no" ng-show="weightedAverageCTE < 1">No</span>
+								<span class="decision-yes" ng-show="weightedAverageCTE >= 1">Yes</span>
+							</div>
+							<label>Total number of people:</label> 
+							<input type="text" ng-model="totalNumberOfPeople" readonly></input>
+							<label>Average cost per person:</label> 
+							$ <input type="text" ng-model="averageCostPerPerson" readonly></input>
+							<label>Weighted average CTE:</label> 
+							<input type="text" ng-model="weightedAverageCTE" readonly></input>
+						</div>
+					</div><!-- end calculator -->
+					<div id="instructions"  class="tab-pane">
+						<p>The <a href="https://www.dropbox.com/s/md7c9sxzsgg68cb/Cash%20Transfer%20Equivalency.pdf">Cash Transfer Equivalency</a> (CTE) calculator is a simple tool that estimates whether a proposed social intervention is going to produce more value, on average, for the end recipients than simply giving cash away in equal amounts to program costs.</p>
+						<h1>Using the calculator</h1>
+							<p>The calculator is split into three sections:</p>
+								<ol>
+									<li><a href="#help-step-one">Step 1: How much will the program cost</a></li>
+									<li><a href="#help-step-two">Step 2: Enter one or more recipient groups for this program</a></li>
+									<li><a href="#help-decision">Decision</a></li>
+								</ol>
+							<h2 id="help-step-one">Step 1: How much will the program cost</h2>
+								<p>In step one, simply enter the total cost of the program. For example, if a grant request is seeking $7,500 for a program that would serve 1,000 people for three months, enter $7,500 as the program cost.</p>
+							<h2 id="help-step-two">Step 2: Enter one or more recipient groups for this program</h2>
+								<p>Each row represents a recipient group, and has the following columns:</p>
+								<ul>
+									<li><a href="#help-do-it">Do it</a></li>
+									<li><a href="#help-group-name">Group name</a></li>
+									<li><a href="#help-number-people">Number of people</a></li>
+									<li><a href="#help-average-value">Average value</a></li>
+									<li><a href="#help-cte">CTE</a></li>
+									<li><a href="#help-remove">Remove</a></li>
+								</ul>
+								<h3 id="help-do-it">Do it</h3>
+									<p>This column determines whether the program is beneficially for the specified group using the CTE methodology.</p>
+								<h3 id="help-group-name">Group name</h3>
+									<p>You can calculate CTE’s for one or more recipient groups. Recipient groups are groups of individuals who are intended beneficiaries of a proposed program. For example, you might have an after school program that would derive different values for children of different age groups. So you might have a group called “Under age 16” and another called “16 and over”.</p>
+								<h3 id="help-number-people">Number of people</h3>
+									<p>This is the number of people in the group the program aims to serve.</p>
+								<h3 id="help-average-value">Number of people</h3>
+									<p>The average value is your best guess as to the monetary value in a group, on average, might derive from the program. For example, if you might guess that the monetary value for students over the age of 16 in an after school program would be $200 on average.</p>
+								<h3 id="help-cte">CTE</h3>
+									<p>This is the CTE value calculated for the group, using the <a href="https://www.dropbox.com/s/md7c9sxzsgg68cb/Cash%20Transfer%20Equivalency.pdf">Cash Transfer Equivalency</a> method.</p>
+								<h3 id="help-remove">Remove</h3>
+									<p>Button to remove the group from the CTE calculation.</p>
+							<h2 id="help-decision">Decision</h2>
+								<p>The decision section shows the weighted average CTE value across all groups, indicating whether the program is worth investing in.</p>
+					</div><!-- end instructions -->
+				</div><!-- end tab content-->
+			</div><!-- end cte content-->
 			<div id="footer">
 				<ul>
 					<li><a href="http://www.fullcontactphilanthropy.com/">Full Contact Philanthropy</a><li>

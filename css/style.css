@@ -1,9 +1,9 @@
 body {font-size: 12pt; font-family: verdana, arial;}
 label {display: block;}
 h1, h2, h3, h4{font-family: verdana, arial}
-h1 {font-size: 1.1em; margin-top: 0px;}
-
-label{display: inline; font-weight: normal;}
+h1 {font-size: 1.3em; margin-top: 0px;}
+h2 {font-size: 1.2em; text-decoration: none;}
+h3 {font-size: 1.1em; font-weight: normal; font-style: normal; text-decoration: underline;}
 
 header{color: #373748; font-weight: bold; font-size: 1.5em; margin-bottom: 20px;}
 
@@ -26,8 +26,9 @@ header{color: #373748; font-weight: bold; font-size: 1.5em; margin-bottom: 20px;
 .table td{border-top: 0px; vertical-align: middle; border-bottom: 5px solid #FFF;}
 .table th{font-size: 10pt;}
 
-#overall-stats{margin-bottom: 20px; border: 1px solid #CCC; padding: 20px; color: #555; box-shadow: 2px 2px 2px #888;}
+#overall-stats{margin: 20px 0px 20px 0px; border: 1px solid #CCC; padding: 20px; color: #555; box-shadow: 2px 2px 2px #888;}
 #overall-stats input{max-width: 75px;}
+#overall-stats label{display: inline; font-weight: normal;}
 
 #decision{font-weight: bold;}
 .decision-yes{color: #008800;}
