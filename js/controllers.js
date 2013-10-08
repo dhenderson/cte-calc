@@ -4,9 +4,10 @@ function CTEController($scope) {
 	$scope.averageCostPerPerson = null;
 	$scope.totalNumberOfPeople = null;
 	$scope.weightedAverageCTE = null;
+	$scope.groupNumber = 2;
 	
 	$scope.targets = new Array({
-			name : 'Group',
+			name : 'Group 1',
 			n : null,
 			averageValue : null,
 			cte : null
@@ -15,11 +16,13 @@ function CTEController($scope) {
 	$scope.newTarget = function(){
 		
 		$scope.targets.push({
-			name : null,
+			name : 'Group ' + $scope.groupNumber,
 			n : null,
 			averageValue : null,
 			cte : null
 		});
+		
+		$scope.groupNumber = $scope.groupNumber + 1;
 	}
 	
 	calculateCTE = function(averageValue, n) {
