@@ -1,32 +1,45 @@
-body {font-size: 12pt; font-family: verdana, arial;}
+body {font-size: 11pt; font-family: verdana, arial; background-color: #eee;}
 label {display: block;}
 h1, h2, h3, h4{font-family: verdana, arial}
 h1 {font-size: 1.3em; margin-top: 0px;}
 h2 {font-size: 1.2em; text-decoration: none;}
 h3 {font-size: 1.1em; font-weight: normal; font-style: normal; text-decoration: underline;}
 
-header{color: #373748; font-weight: bold; font-size: 1.5em; margin-bottom: 20px;}
+a{color: #0055d4;}
+a:hover{color: #0055d4;}
+.pill-color .active a,
+.pill-color .active a:hover {
+    background-color: #214478;
+}
 
-.cte-container{margin: 0px auto; max-width: 920px; margin-top: 20px; padding: 10px;}
-.cte-content{padding: 0px; border: 0px solid #CCC; border-bottom: 0px; background-color: #FFF; margin-bottom: 20px;}
+header{color: #FFF; margin-bottom: 0px; border-bottom: 3px solid #002255; background-color: #214478; padding: 20px 0px 20px 0px;}
+#cte-name{font-size: 1.4em; font-weight: bold;}
+#header-content{max-width: 920px; margin: 0px auto;}
+#header-content img{vertical-align: middle;}
+
+.cte-container{
+	margin: 0px auto; max-width: 920px; margin-top: 20px; 
+}
+.cte-content{margin-bottom: 20px; padding: 20px; border: 2px solid #CCC;
+	border-radius: 10px; 	background-color: #FFF;}
 .cte-content label {display: block; margin-bottom: 10px;}
 
 #program{margin-bottom: 20px;}
 
 .background-color-no{background-color: #FFDDDD;}
-.background-color-yes{background-color: #DDFFDD;}
+.background-color-yes{background-color: #c6e9af;}
 
 .cte {font-weight: bold; color: #EE0000;}
 .overone {color: #008800;}
-.do-it-no {background-color: #EE8888;}
+.do-it-no {background-color: #ff2a2a;}
 .do-it-no div{text-align: center; vertical-align: middle}
-.do-it-yes{background-color: #88EE88;}
+.do-it-yes{background-color: #44aa00;}
 
 .table input{max-width: 150px;}
 .table td{border-top: 0px; vertical-align: middle; border-bottom: 5px solid #FFF;}
 .table th{font-size: 10pt;}
 
-#overall-stats{margin: 20px 0px 20px 0px; border: 1px solid #CCC; padding: 20px; color: #555; box-shadow: 2px 2px 2px #888;}
+#overall-stats{margin: 20px 0px 20px 0px; border: 1px solid #AAA; padding: 20px; color: #555; box-shadow: 5px 2px 5px #555;}
 #overall-stats input{max-width: 75px;}
 #overall-stats label{display: inline; font-weight: normal;}
 
@@ -34,6 +47,6 @@ header{color: #373748; font-weight: bold; font-size: 1.5em; margin-bottom: 20px;
 .decision-yes{color: #008800;}
 .decision-no{color: #DD0000;}
 
-#footer{text-align: center; margin: 0px auto; margin-top: 30px; font-size: 0.8em;}
+#footer{text-align: center; margin: 0px auto; margin-top: 30px; font-size: 0.9em;}
 #footer ul {list-style-type: none; margin: 0xp; padding: 0px;}
 #footer ul li{margin-bottom: 5px;}

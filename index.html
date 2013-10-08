@@ -9,21 +9,28 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<header>
+			<div id="header-content">
+				<img src="img/logo.png" />
+				<span id="cte-name">Cash Transfer Equivalency Calculator</span>
+			</div>
+		</header>
 		<div ng-controller="CTEController" class="cte-container">
-			<header>
-				Cash Transfer Equivalency Calculator
-			</header>
-			<div class="cte-content">
 				<div class="tabbable">
-					<ul class="nav nav-tabs">
+					<ul class="nav nav-pills pill-color">
 						<li class="active">
 							<a href="#calculator" data-toggle="tab">Calculator</a>
 						</li>
 						<li>
 							<a href="#instructions" data-toggle="tab">Instructions</a>
 						</li>
+						<li>
+							<a href="#about" data-toggle="tab">About</a>
+						</li>
 					</ul>
 				</div>
+			<div class="cte-content">
+
 				<div class="tab-content">
 					<div id="calculator" class="tab-pane active">
 						<div id="program">
@@ -79,41 +86,42 @@
 						</div>
 					</div><!-- end calculator -->
 					<div id="instructions"  class="tab-pane">
-						<p>The <a href="https://www.dropbox.com/s/md7c9sxzsgg68cb/Cash%20Transfer%20Equivalency.pdf">Cash Transfer Equivalency</a> (CTE) calculator is a simple tool that estimates whether a proposed social intervention is going to produce more value, on average, for the end recipients than simply giving cash away in equal amounts to program costs.</p>
-						<h1>Using the calculator</h1>
-							<p>The calculator is split into three sections:</p>
-								<ol>
-									<li><a href="#help-step-one">Step 1: How much will the program cost</a></li>
-									<li><a href="#help-step-two">Step 2: Enter one or more recipient groups for this program</a></li>
-									<li><a href="#help-decision">Decision</a></li>
-								</ol>
-							<h2 id="help-step-one">Step 1: How much will the program cost</h2>
-								<p>In step one, simply enter the total cost of the program. For example, if a grant request is seeking $7,500 for a program that would serve 1,000 people for three months, enter $7,500 as the program cost.</p>
-							<h2 id="help-step-two">Step 2: Enter one or more recipient groups for this program</h2>
-								<p>Each row represents a recipient group, and has the following columns:</p>
-								<ul>
-									<li><a href="#help-do-it">Do it</a></li>
-									<li><a href="#help-group-name">Group name</a></li>
-									<li><a href="#help-number-people">Number of people</a></li>
-									<li><a href="#help-average-value">Average value</a></li>
-									<li><a href="#help-cte">CTE</a></li>
-									<li><a href="#help-remove">Remove</a></li>
-								</ul>
-								<h3 id="help-do-it">Do it</h3>
-									<p>This column determines whether the program is beneficially for the specified group using the CTE methodology.</p>
-								<h3 id="help-group-name">Group name</h3>
-									<p>You can calculate CTE's for one or more recipient groups. Recipient groups are groups of individuals who are intended beneficiaries of a proposed program. For example, you might have an after school program that would derive different values for children of different age groups. So you might have a group called "Under age 16" and another called "16 and over".</p>
-								<h3 id="help-number-people">Number of people</h3>
-									<p>This is the number of people in the group the program aims to serve.</p>
-								<h3 id="help-average-value">Number of people</h3>
-									<p>The average value is your best guess as to the monetary value in a group, on average, might derive from the program. For example, if you might guess that the monetary value for students over the age of 16 in an after school program would be $200 on average.</p>
-								<h3 id="help-cte">CTE</h3>
-									<p>This is the CTE value calculated for the group, using the <a href="https://www.dropbox.com/s/md7c9sxzsgg68cb/Cash%20Transfer%20Equivalency.pdf">Cash Transfer Equivalency</a> method.</p>
-								<h3 id="help-remove">Remove</h3>
-									<p>Button to remove the group from the CTE calculation.</p>
-							<h2 id="help-decision">Decision</h2>
-								<p>The decision section shows the weighted average CTE value across all groups, indicating whether the program is worth investing in.</p>
+						<p>The calculator is split into three sections:</p>
+							<ol>
+								<li><a href="#help-step-one">Step 1: How much will the program cost</a></li>
+								<li><a href="#help-step-two">Step 2: Enter one or more recipient groups for this program</a></li>
+								<li><a href="#help-decision">Decision</a></li>
+							</ol>
+						<h1 id="help-step-one">Step 1: How much will the program cost</h1>
+							<p>In step one, simply enter the total cost of the program. For example, if a grant request is seeking $7,500 for a program that would serve 1,000 people for three months, enter $7,500 as the program cost.</p>
+						<h1 id="help-step-two">Step 2: Enter one or more recipient groups for this program</h1>
+							<p>Each row represents a recipient group, and has the following columns:</p>
+							<ul>
+								<li><a href="#help-do-it">Do it</a></li>
+								<li><a href="#help-group-name">Group name</a></li>
+								<li><a href="#help-number-people">Number of people</a></li>
+								<li><a href="#help-average-value">Average value</a></li>
+								<li><a href="#help-cte">CTE</a></li>
+								<li><a href="#help-remove">Remove</a></li>
+							</ul>
+							<h2 id="help-do-it">Do it</h2>
+								<p>This column determines whether the program is beneficially for the specified group using the CTE methodology.</p>
+							<h2 id="help-group-name">Group name</h2>
+								<p>You can calculate CTE's for one or more recipient groups. Recipient groups are groups of individuals who are intended beneficiaries of a proposed program. For example, you might have an after school program that would derive different values for children of different age groups. So you might have a group called "Under age 16" and another called "16 and over".</p>
+							<h2 id="help-number-people">Number of people</h2>
+								<p>This is the number of people in the group the program aims to serve.</p>
+							<h2 id="help-average-value">Number of people</h2>
+								<p>The average value is your best guess as to the monetary value in a group, on average, might derive from the program. For example, if you might guess that the monetary value for students over the age of 16 in an after school program would be $200 on average.</p>
+							<h2 id="help-cte">CTE</h2>
+								<p>This is the CTE value calculated for the group, using the <a href="https://www.dropbox.com/s/md7c9sxzsgg68cb/Cash%20Transfer%20Equivalency.pdf">Cash Transfer Equivalency</a> method.</p>
+							<h2 id="help-remove">Remove</h2>
+								<p>Button to remove the group from the CTE calculation.</p>
+						<h1 id="help-decision">Decision</h1>
+							<p>The decision section shows the weighted average CTE value across all groups, indicating whether the program is worth investing in.</p>
 					</div><!-- end instructions -->
+					<div id="about"  class="tab-pane">
+						<p>The <a href="https://www.dropbox.com/s/md7c9sxzsgg68cb/Cash%20Transfer%20Equivalency.pdf">Cash Transfer Equivalency</a> (CTE) calculator is a simple tool that estimates whether a proposed social intervention is going to produce more value, on average, for the end recipients than simply giving cash away in equal amounts to program costs.</p>
+					</div><!-- end about -->
 				</div><!-- end tab content-->
 			</div><!-- end cte content-->
 			<div id="footer">
