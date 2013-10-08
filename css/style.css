@@ -47,6 +47,6 @@ header{color: #FFF; margin-bottom: 0px; border-bottom: 3px solid #002255; backgr
 .decision-yes{color: #008800;}
 .decision-no{color: #DD0000;}
 
-#footer{text-align: center; margin: 0px auto; margin-top: 30px; font-size: 0.9em;}
+#footer{text-align: center; margin: 0px auto; margin-top: 30px;}
 #footer ul {list-style-type: none; margin: 0xp; padding: 0px;}
 #footer ul li{margin-bottom: 5px;}
