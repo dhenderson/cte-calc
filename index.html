@@ -11,11 +11,8 @@
 	<body>
 		<header>
 			<div id="header-content">
-				<img src="img/logo.png" />
-				<span id="cte-name">Cash Transfer Equivalency Calculator</span>
-			</div>
-		</header>
-		<div ng-controller="CTEController" class="cte-container">
+				
+				<div id="cte-name"><img src="img/logo.png" /> Cash Transfer Equivalency Calculator</div>
 				<div class="tabbable">
 					<ul class="nav nav-pills pill-color">
 						<li class="active">
@@ -29,15 +26,18 @@
 						</li>
 					</ul>
 				</div>
+			</div>
+		</header>
+		<div ng-controller="CTEController" class="cte-container">
 			<div class="cte-content">
 
 				<div class="tab-content">
 					<div id="calculator" class="tab-pane active">
-						<div id="program">
+						<div id="program" class="step">
 							<label><strong>Step 1:</strong> How much will this program cost?</label> 
 							$ <input type="text" ng-model="programCost" ng-change="calculateAverageCostPerPerson(); calculateWeightedAverageCTE();"></input>
 						</div>
-						<div id="targets">
+						<div id="targets" class="step">
 							<label><strong>Step 2:</strong> Enter one or more recipient groups for this program</label> 
 							<table class="table">
 								<tr>
@@ -68,16 +68,16 @@
 									<td><button class="btn" ng-click="removeTarget(key)">Remove</button></td>
 								</tr>
 							</table>
+							<button class="btn" ng-click="newTarget()">Add new group</button>
 						</div>
-						<button class="btn" ng-click="newTarget()">Add new group</button>
-						<div id="overall-stats" class="background-color-no" ng-class="{'background-color-yes': weightedAverageCTE >= 1}">
+						<div id="overall-stats" class="background-color-no step" ng-class="{'background-color-yes': weightedAverageCTE >= 1}">
 							<h1>Decision</h1>
 							<div id="decision">
 								<label>Worth investing in: </label>
 								<span class="decision-no" ng-show="weightedAverageCTE < 1">No</span>
 								<span class="decision-yes" ng-show="weightedAverageCTE >= 1">Yes</span>
 							</div>
-							<label>Total number of people:</label> 
+							<label>Number of people:</label> 
 							<input type="text" ng-model="totalNumberOfPeople" readonly></input>
 							<label>Average cost per person:</label> 
 							$ <input type="text" ng-model="averageCostPerPerson" readonly></input>

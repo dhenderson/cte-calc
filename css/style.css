@@ -1,4 +1,4 @@
-body {font-size: 11pt; font-family: verdana, arial; background-color: #eee;}
+body {font-size: 11pt; font-family: verdana, arial; background-color: #FFF;}
 label {display: block;}
 h1, h2, h3, h4{font-family: verdana, arial}
 h1 {font-size: 1.3em; margin-top: 0px;}
@@ -12,17 +12,18 @@ a:hover{color: #0055d4;}
     background-color: #214478;
 }
 
-header{color: #FFF; margin-bottom: 0px; background-color: #214478; padding: 20px 0px 20px 0px;}
-#cte-name{font-size: 1.4em; font-weight: bold;}
-#header-content{max-width: 920px; margin: 0px auto;}
+header{color: #333; padding: 10px 0px 10px 0px; border-bottom: 1px solid #214478; margin-bottom: 30px;}
+#cte-name{font-size: 1.4em; margin-bottom: 10px;}
+#header-content{max-width: 850px; margin: 0px auto;}
 #header-content img{vertical-align: middle;}
 
 .cte-container{
-	margin: 0px auto; max-width: 920px; margin-top: 20px; 
+	margin: 0px auto; max-width: 850px;
 }
-.cte-content{margin-bottom: 20px; padding: 20px; border: 2px solid #CCC;
-	border-radius: 10px; 	background-color: #FFF;}
+.cte-content{margin-bottom: 20px; /**border-radius: 10px;**/}
 .cte-content label {display: block; margin-bottom: 10px;}
+
+.step{border: 1px solid #AAA; padding: 20px; box-shadow: 2px 2px 5px #888; margin-bottom: 20px; background-color: #FFF;}
 
 #program{margin-bottom: 20px;}
 
@@ -37,9 +38,9 @@ header{color: #FFF; margin-bottom: 0px; background-color: #214478; padding: 20px
 
 .table input{max-width: 150px;}
 .table td{border-top: 0px; vertical-align: middle; border-bottom: 5px solid #FFF;}
-.table th{font-size: 10pt;}
+.table th{font-size: 10pt; border-top: none;}
 
-#overall-stats{margin: 20px 0px 20px 0px; border: 1px solid #AAA; padding: 20px; color: #555; box-shadow: 5px 2px 5px #555;}
+#overall-stats{color: #555;}
 #overall-stats input{max-width: 75px;}
 #overall-stats label{display: inline; font-weight: normal;}
 
@@ -47,6 +48,8 @@ header{color: #FFF; margin-bottom: 0px; background-color: #214478; padding: 20px
 .decision-yes{color: #008800;}
 .decision-no{color: #DD0000;}
 
-#footer{text-align: center; margin: 0px auto; margin-top: 30px;}
+#footer{text-align: center; margin: 0px auto; margin-top: 30px; font-size: 1em; border-top: 1px solid #CCC; padding-top: 10px;}
 #footer ul {list-style-type: none; margin: 0xp; padding: 0px;}
 #footer ul li{margin-bottom: 5px;}
+
+.tabbable ul{margin-bottom: 0px;}
