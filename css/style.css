@@ -12,7 +12,7 @@ a:hover{color: #0055d4;}
     background-color: #214478;
 }
 
-header{color: #333; padding: 10px 0px 10px 0px; border-bottom: 1px solid #214478; margin-bottom: 10px; background-color: #FFF;}
+header{color: #333; padding: 10px 0px 10px 0px; border-bottom: 1px solid #214478; margin-bottom: 20px; background-color: #FFF;}
 #cte-name{font-size: 1.4em; margin-bottom: 10px;}
 #header-content{max-width: 830px; margin: 0px auto;}
 #header-content img{vertical-align: middle;}
@@ -48,7 +48,7 @@ header{color: #333; padding: 10px 0px 10px 0px; border-bottom: 1px solid #214478
 .decision-yes{color: #008800;}
 .decision-no{color: #DD0000;}
 
-#footer{text-align: center; margin: 0px auto; margin-top: 20px; font-size: 1em; border-top: 0px solid #CCC; padding-top: 10px;}
+#footer{text-align: center; margin: 0px auto; font-size: 1em; margin-bottom: 20px;}
 #footer ul {list-style-type: none; margin: 0xp; padding: 0px;}
 #footer ul li{margin-bottom: 5px;}
 
