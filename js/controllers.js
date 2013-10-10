@@ -26,14 +26,15 @@ function CTEController($scope) {
 	}
 	
 	calculateCTE = function(averageValue, n) {
-		var averageCost = $scope.programCost/n;
+
+		var averageCost = parseFloat($scope.programCost)/n;
 		var cte = averageValue/averageCost;
 		cte = cte.toFixed(2);
 		return cte;
 	}
 	
 	$scope.calculateAverageCostPerPerson = function(){
-		var averageCost = $scope.programCost/$scope.totalNumberOfPeople
+		var averageCost = parseFloat($scope.programCost)/$scope.totalNumberOfPeople
 		
 		$scope.averageCostPerPerson = averageCost.toFixed(2)
 	}
@@ -75,8 +76,24 @@ function CTEController($scope) {
 	}
 	
 	$scope.updateCTE = function(){
+	
+		// strip non numeric except "." for program cost
+		if ($scope.programCost != 0) {
+			$scope.programCost = $scope.programCost.replace(/[^\d.-]/g, '');
+		}
+		
 		for (var key in $scope.targets){
 			var target = $scope.targets[key];
+			
+			// strip non-numeric except "."
+			if (target.averageValue != null) {
+				target.averageValue = target.averageValue.replace(/[^\d.-]/g, '');
+			}
+			// can't have fractional people, so strip all non-numeric
+			if (target.n != null) {
+				target.n = target.n.replace(/\D/g,'');
+			}
+			
 			target.cte = calculateCTE(target.averageValue, target.n);
 		}
 	}
