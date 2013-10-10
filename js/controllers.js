@@ -8,18 +8,18 @@ function CTEController($scope) {
 	
 	$scope.targets = new Array({
 			name : 'Group 1',
-			n : null,
-			averageValue : null,
-			cte : null
+			n : 0,
+			averageValue : 0,
+			cte : 0
 	});
 	
 	$scope.newTarget = function(){
 		
 		$scope.targets.push({
 			name : 'Group ' + $scope.groupNumber,
-			n : null,
-			averageValue : null,
-			cte : null
+			n : 0,
+			averageValue : 0,
+			cte : 0
 		});
 		
 		$scope.groupNumber = $scope.groupNumber + 1;
@@ -30,13 +30,18 @@ function CTEController($scope) {
 		var averageCost = parseFloat($scope.programCost)/n;
 		var cte = averageValue/averageCost;
 		cte = cte.toFixed(2);
+		
+		if (isNaN(cte)) {
+			cte = '---';
+		}
+		
 		return cte;
 	}
 	
 	$scope.calculateAverageCostPerPerson = function(){
 		var averageCost = parseFloat($scope.programCost)/$scope.totalNumberOfPeople
 		
-		$scope.averageCostPerPerson = averageCost.toFixed(2)
+		$scope.averageCostPerPerson = averageCost.toFixed(2);
 	}
 	
 	$scope.calculateWeightedAverageCTE = function(){
@@ -86,11 +91,11 @@ function CTEController($scope) {
 			var target = $scope.targets[key];
 			
 			// strip non-numeric except "."
-			if (target.averageValue != null) {
+			if (target.averageValue != 0) {
 				target.averageValue = target.averageValue.replace(/[^\d.-]/g, '');
 			}
 			// can't have fractional people, so strip all non-numeric
-			if (target.n != null) {
+			if (target.n != 0) {
 				target.n = target.n.replace(/\D/g,'');
 			}
 			
@@ -106,7 +111,8 @@ function CTEController($scope) {
 		
 		$scope.countTotalNumberOfPeople();
 		$scope.calculateAverageCostPerPerson();
-		$scope.calculateWeightedAverageCTE();
-		
+		$scope.calculateWeightedAverageCTE();	
 	}
+	
+	
 }

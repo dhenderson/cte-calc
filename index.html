@@ -35,7 +35,7 @@
 					<div id="calculator" class="tab-pane active">
 						<div id="program" class="step">
 							<label><strong>Step 1:</strong> How much will this program cost?</label> 
-							$ <input type="text" ng-model="programCost" ng-change="calculateAverageCostPerPerson(); calculateWeightedAverageCTE();"></input>
+							$ <input type="text" ng-model="programCost" ng-change="calculateAverageCostPerPerson(); calculateWeightedAverageCTE();" onfocus="if(this.value==0){this.value='';}"></input>
 						</div>
 						<div id="targets" class="step">
 							<label><strong>Step 2:</strong> Enter one or more recipient groups for this program</label> 
@@ -59,10 +59,10 @@
 										<input type="text" ng-model="target.name" ng-model-instant></input>
 									</td>
 									<td>
-										<input type="text" ng-model="target.n" ng-change="updateCTE(); countTotalNumberOfPeople(); calculateAverageCostPerPerson(); calculateWeightedAverageCTE();" ng-model-instant></input>
+										<input type="text" ng-model="target.n" onfocus="if(this.value==0){this.value='';}" ng-change="updateCTE(); countTotalNumberOfPeople(); calculateAverageCostPerPerson(); calculateWeightedAverageCTE();" ng-model-instant></input>
 									</td>
 									<td>
-										$ <input type="text" ng-model="target.averageValue" ng-change="updateCTE(); calculateWeightedAverageCTE();" ng-model-instant></input>
+										$ <input type="text" ng-model="target.averageValue" onfocus="if(this.value==0){this.value='';}" ng-change="updateCTE(); calculateWeightedAverageCTE();" ng-model-instant></input>
 									</td>
 									<td class="cte" ng-class="{overone: target.cte >= 1}">{{target.cte}}</td>
 									<td><button class="btn" ng-click="removeTarget(key)">Remove</button></td>
