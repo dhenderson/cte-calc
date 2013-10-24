@@ -1,4 +1,4 @@
-body {font-size: 11pt; font-family: verdana, arial; background-color: #F1F1F1;}
+body {font-size: 11pt; font-family: verdana, arial; background-color: #FFF;}
 label {display: block;}
 h1, h2, h3, h4{font-family: verdana, arial}
 h1 {font-size: 1.3em; margin-top: 0px;}
@@ -20,10 +20,10 @@ header{color: #333; padding: 10px 0px 10px 0px; border-bottom: 1px solid #214478
 .cte-container{
 	margin: 0px auto; max-width: 830px;
 }
-.cte-content{margin-bottom: 20px; border-radius: 10px; background-color: #FAFAFA; padding: 20px; border: 1px solid #CCC;}
+.cte-content{}
 .cte-content label {display: block; margin-bottom: 10px;}
 
-.step{border: 1px solid #AAA; padding: 20px; box-shadow: 2px 2px 5px #888; margin-bottom: 20px; background-color: #FFF;}
+.step{border: 1px solid #999; padding: 20px; box-shadow: 2px 2px 5px #888; margin-bottom: 20px; background-color: #FFF;}
 
 #program{margin-bottom: 20px;}
 
@@ -48,7 +48,7 @@ header{color: #333; padding: 10px 0px 10px 0px; border-bottom: 1px solid #214478
 .decision-yes{color: #008800;}
 .decision-no{color: #DD0000;}
 
-#footer{text-align: center; margin: 0px auto; font-size: 1em; margin-bottom: 20px;}
+#footer{text-align: center; margin: 0px auto; font-size: 1em; margin-bottom: 20px; font-size: 0.8em;}
 #footer ul {list-style-type: none; margin: 0xp; padding: 0px;}
 #footer ul li{margin-bottom: 5px;}
 
